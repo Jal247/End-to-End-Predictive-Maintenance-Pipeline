@@ -1,41 +1,54 @@
 asset_id,date,error_type
-ASSET_000,290,Suspension
-ASSET_002,73,Cooling System
-ASSET_002,179,Cooling System
-ASSET_008,89,Cooling System
-ASSET_010,295,Cooling System
-ASSET_011,57,Cooling System
-ASSET_014,270,Suspension
-ASSET_029,57,Cooling System
-ASSET_030,129,Cooling System
-ASSET_033,267,Cooling System
-ASSET_035,225,Cooling System
-ASSET_035,292,Suspension
-ASSET_036,38,Cooling System
-ASSET_037,278,Suspension
-ASSET_039,295,Suspension
-ASSET_041,291,Suspension
-ASSET_043,293,Cooling System
-ASSET_049,64,Cooling System
-ASSET_050,119,Cooling System
-ASSET_054,43,Cooling System
-ASSET_058,83,Cooling System
-ASSET_058,195,Cooling System
-ASSET_058,236,Cooling System
-ASSET_058,300,Cooling System
-ASSET_059,285,Cooling System
-ASSET_066,213,Cooling System
-ASSET_072,288,Cooling System
-ASSET_073,48,Cooling System
-ASSET_075,158,Cooling System
-ASSET_075,286,Suspension
-ASSET_077,293,Cooling System
-ASSET_080,276,Cooling System
-ASSET_084,143,Cooling System
-ASSET_086,97,Cooling System
-ASSET_089,190,Cooling System
-ASSET_090,120,Cooling System
-ASSET_091,202,Cooling System
-ASSET_094,53,Cooling System
-ASSET_096,293,Suspension
-ASSET_099,277,Cooling System
+ASSET_001,225,Cooling System
+ASSET_009,233,Cooling System
+ASSET_010,14,Cooling System
+ASSET_010,135,Cooling System
+ASSET_013,99,Cooling System
+ASSET_013,225,Cooling System
+ASSET_013,295,Suspension
+ASSET_015,110,Cooling System
+ASSET_018,124,Cooling System
+ASSET_018,198,Cooling System
+ASSET_019,57,Cooling System
+ASSET_021,87,Cooling System
+ASSET_021,288,Cooling System
+ASSET_022,83,Cooling System
+ASSET_022,274,Cooling System
+ASSET_022,287,Cooling System
+ASSET_025,56,Cooling System
+ASSET_025,109,Cooling System
+ASSET_025,295,Suspension
+ASSET_029,43,Cooling System
+ASSET_035,294,Cooling System
+ASSET_037,125,Cooling System
+ASSET_040,266,Suspension
+ASSET_041,121,Cooling System
+ASSET_043,264,Cooling System
+ASSET_045,106,Cooling System
+ASSET_045,300,Suspension
+ASSET_047,97,Cooling System
+ASSET_047,164,Cooling System
+ASSET_049,275,Cooling System
+ASSET_052,247,Cooling System
+ASSET_052,271,Suspension
+ASSET_054,286,Suspension
+ASSET_055,219,Cooling System
+ASSET_059,104,Cooling System
+ASSET_072,94,Cooling System
+ASSET_072,286,Cooling System
+ASSET_074,67,Cooling System
+ASSET_075,149,Cooling System
+ASSET_076,242,Cooling System
+ASSET_076,263,Cooling System
+ASSET_078,205,Cooling System
+ASSET_080,274,Cooling System
+ASSET_085,179,Cooling System
+ASSET_086,297,Suspension
+ASSET_090,21,Cooling System
+ASSET_091,186,Cooling System
+ASSET_091,229,Cooling System
+ASSET_093,268,Suspension
+ASSET_095,217,Cooling System
+ASSET_095,293,Suspension
+ASSET_098,160,Cooling System
+ASSET_098,256,Cooling System
