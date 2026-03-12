@@ -6,6 +6,9 @@ Predictive modeling (XGBoost, Random Forest) to minimize unscheduled downtime an
 
 End-to-end ML pipeline to predict vehicle component failure within a 30-day window using Time-Series Telemetry, SHAP, and SMOTE.
 
+**Domain Expertise**
+Having previously worked on the Enterprise Asset Management (EAM) platform at Cetaris, I designed this project to address the specific 'unplanned downtime' challenges faced by fleet managers. I focused on data points like Meter Readings and Failure Codes, which are the standard 'ground truth' in Cetaris databases.
+
 **Executive Summary**
 In large-scale fleet operations, unexpected mechanical failures are the primary drivers of inflated operational costs. This project develops a Fleet Asset Intelligence System that transitions maintenance from a reactive "fix-when-fail" model to a proactive "predict-and-prevent" strategy. By leveraging time-series sensor telemetry, the system identifies high-risk assets before they break down, allowing managers to schedule repairs during planned downtime, thereby protecting the asset's total lifecycle value.
 
