@@ -14,13 +14,12 @@ In large-scale fleet operations, unexpected mechanical failures are the primary 
 
 **Problem Statement**
 
-Current fleet maintenance protocols often rely on static mileage intervals or reactive responses to dashboard alerts. This results in:
+Current fleet maintenance protocols often rely on static mileage intervals or reactive responses to dashboard alerts. 
 
-Operational Disruptions: Unscheduled vehicle downtime halting supply chain delivery.
-
-High Emergency Costs: Premium pricing for last-minute parts procurement and emergency labor.
-
-Asset Depreciation: Repeated catastrophic failures reducing the long-term resale value of the fleet.
+This results in:
+  - Operational Disruptions: Unscheduled vehicle downtime halting supply chain delivery.
+  - High Emergency Costs: Premium pricing for last-minute parts procurement and emergency labor.
+  - Asset Depreciation: Repeated catastrophic failures reducing the long-term resale value of the fleet.
 
 **Project Objectives**
 
@@ -34,12 +33,10 @@ The goal is to develop a robust classification pipeline capable of predicting a 
 **Business Problem**
 
 Fleet managers often rely on:
-
  - fixed service intervals
-- reactive breakdown repairs
+ - reactive breakdown repairs
 
 This leads to:
-
 - unexpected downtime
 - expensive emergency repairs
 - inefficient maintenance scheduling
@@ -54,7 +51,7 @@ This project builds a predictive maintenance model that identifies high-risk veh
 
 
 ### System Architecture
-
+```
 Telemetry Data + Work Orders + Asset Metadata
                 │
                 ▼
@@ -78,7 +75,7 @@ Telemetry Data + Work Orders + Asset Metadata
                 ▼
         Model Explainability
              (SHAP)
-
+```
 ### The Data Science Workflow
 
 **1. Data Engineering (Relational Logic):**
@@ -102,12 +99,7 @@ The model predicts: Failure within the next 30 days
      - target = 1 if failure occurs within next 30 days
      - target = 0 otherwise
 
-**2. Exploratory Data Analysis (EDA):**
-
-- Discovered that "Days Since Last Service" is a non-linear predictor—risk spikes exponentially after 180 days.
-- Identified Data Leakage: Removed "Repair Cost" from the training set, as it is only known after a failure occurs.
-
-**3. Feature Engineering:**
+**3. Feature Engineering and Exploratory Data Analysis (EDA):**
 
 Fit Scalers on Train Only.Prevent data leakage.
 - rolling window features.
@@ -149,12 +141,9 @@ Models were evaluated using:
 SHAP analysis was used to explain predictions.
 
 Example insights:
-
-High vibration volatility increases failure probability
-
-Thermal stress contributes to component degradation
-
-Assets overdue for service have higher risk.
+ -  High vibration volatility increases failure probability
+ -  Thermal stress contributes to component degradation
+ -  Assets overdue for service have higher risk.
 
 ## Expected Business Impact
 
@@ -163,29 +152,33 @@ Assets overdue for service have higher risk.
     - Labor Optimization: Better scheduling of shop technicians based on predicted demand.
     - Improved fleet lifecycle management
 
+
 **Folder Structure**
 
+```
 fleet-asset-intelligence/
-
-data/
-images/
-notebooks/
-    01_data_generation.ipynb
-    02_merging_eda_featureeng.ipynb
-    03_split_model_evaluation_SHAP.ipynb
-models/
-README.md
-requirements.txt
-
-fleet-asset-intelligence/
-├── data/               # Raw Assets, Telemetry and Work Order CSVs
-├── images/             # SHAP plots, ROC Curves, and Architecture diagrams
-├── notebooks/          
-│   ├── 00_data_generation.ipynb 
-│   ├── 01_eda_and_merging.ipynb
-│   └── 02_modeling_and_shap.ipynb
-├── src/                
+│
+├── data/        # Raw Assets, Telemetry and Work Order CSVs
+│   ├── raw
+│   └── processed
+│
+├── images/       # SHAP plots, ROC Curves, and Architecture diagrams
+│   ├── shap_summary.png
+│   └── roc_curve.png
+│
+├── notebooks/
+│   ├── 01_data_generation.ipynb
+│   ├── 02_merging_eda_featureeng.ipynb
+│   └── 03_split_model_evaluation_SHAP.ipynb
+│
+├── model/
+│   ├── pickel
+│   └── joblib
+│
+├── src/
 │   ├── feature_logic.py
 │   └── evaluation.py
-├── README.md           
-└── requirements.txt
+│
+├── requirements.txt
+└── README.md
+```
