@@ -99,8 +99,9 @@ Tables
 Target Definition
 
 The model predicts: Failure within the next 30 days
-     - target = 1 if failure occurs within next 30 days
-     - target = 0 otherwise
+
+    - target = 1 if failure occurs within next 30 days
+    - target = 0 otherwise
 
 **2. Exploratory Data Analysis (EDA):**
 
@@ -150,11 +151,9 @@ SHAP analysis was used to explain predictions.
 
 Example insights:
 
-High vibration volatility increases failure probability
-
-Thermal stress contributes to component degradation
-
-Assets overdue for service have higher risk.
+ - High vibration volatility increases failure probability
+ - Thermal stress contributes to component degradation
+ - Assets overdue for service have higher risk.
 
 ## Expected Business Impact
 
@@ -177,7 +176,9 @@ models/
 README.md
 requirements.txt
 
+
 fleet-asset-intelligence/
+
 ├── data/               # Raw Assets, Telemetry and Work Order CSVs
 ├── images/             # SHAP plots, ROC Curves, and Architecture diagrams
 ├── notebooks/          
