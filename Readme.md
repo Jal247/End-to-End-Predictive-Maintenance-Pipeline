@@ -14,7 +14,7 @@ In large-scale fleet operations, unexpected mechanical failures are the primary 
 
 **Problem Statement**
 
-Current fleet maintenance protocols often rely on static mileage intervals or reactive responses to dashboard alert. This results in:
+Current fleet maintenance protocols often rely on static mileage intervals or reactive responses to dashboard alerts. This results in:
 
 Operational Disruptions: Unscheduled vehicle downtime halting supply chain delivery.
 
@@ -76,6 +76,15 @@ Fit Scalers on Train Only.Prevent data leakage.
 **4. Model Development:**
 
 Train/Tune on Train set. Build the logic.
+
+**Model Evaluation:**
+
+Models were evaluated using:
+
+- ROC-AUC
+- Precision-Recall Curve
+- Recall (Critical for failure detection). In predictive maintenance, Recall is prioritized to minimize missed failures.
+- F1 Score
 
 **5. Model Interpretability (SHAP):**
 
