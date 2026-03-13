@@ -148,10 +148,10 @@ Example insights:
 
 ## Expected Business Impact
 
-    - Reduced Downtime: Expecting 15-20% reduction in unscheduled maintenance events.
-    - Cost Savings: Lower "Cost per Mile" by avoiding emergency road-call fees.
-    - Labor Optimization: Better scheduling of shop technicians based on predicted demand.
-    - Improved fleet lifecycle management
+ - Reduced Downtime: Expecting 15-20% reduction in unscheduled maintenance events.
+ - Cost Savings: Lower "Cost per Mile" by avoiding emergency road-call fees.
+ - Labor Optimization: Better scheduling of shop technicians based on predicted demand.
+ - Improved fleet lifecycle management
 
 
 **Folder Structure**
