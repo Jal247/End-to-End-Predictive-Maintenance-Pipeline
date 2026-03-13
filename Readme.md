@@ -177,8 +177,8 @@ fleet-asset-intelligence/
 │   └── joblib
 │
 ├── src/
-│   ├── feature_logic.py
-│   └── evaluation.py
+│   ├── preprocessing.py → All data cleaning, merging, feature engineering, encoding, scaling, and train-test split
+│   └── pipeline.py → Model training, hyperparameter tuning, evaluation, SHAP analysis, and plotting
 │
 ├── requirements.txt
 └── README.md
