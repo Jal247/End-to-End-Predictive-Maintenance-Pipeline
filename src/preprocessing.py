@@ -15,7 +15,7 @@ def select_features(df: pd.DataFrame) -> pd.DataFrame:
     """Select relevant model features."""
     model_features = [
         # Metadata
-        'asset_type', 'purchase_year', 
+        'asset_type', 
         # Usage Metrics
         'odometer', 'utilization_7day_avg', 'days_since_service',
         # Historical Reliability
