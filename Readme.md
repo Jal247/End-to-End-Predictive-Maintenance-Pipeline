@@ -67,16 +67,11 @@ Telemetry Data + Work Orders + Asset Metadata
                 ▼
        Machine Learning Models
   (Random Forest, XGBoost, LightGBM)
-           Pipeline
-              SMOTE
-               ↓
-              Model(Random Forest, XGBoost, LightGBM)
+           Model(Random Forest, XGBoost, LightGBM)
                 ↓
            RandomizedSearchCV
                 ↓
            Best Model
-                ↓
-           Probability Calibration
                 ↓
            Threshold Optimization
                 ↓
@@ -118,7 +113,7 @@ The model predicts: Failure within the next 30 days
 
 Fit Scalers on Train Only.Prevent data leakage.
 - rolling window features.
-- Sensor Drift: Calculated the slope of Vibration index and coolent temp over days approching to failure.
+- Sensor Drift: observed the slope of rolling Vibration variance and oil pressure over days approching to failure.
 - Rolling time-series features capture mechanical degradation: sensor volatility, thermal stress, usage intensity and historical  reliability.
 
 **4. Temporal Split(or Time-Series Split)**
@@ -145,15 +140,15 @@ Class imbalance handled using cost-sensitive learning instead of SMOTE.
 
 Models were evaluated using:
 
-- ROC-AUC
-- Precision-Recall Curve
 - Recall (Critical for failure detection). In predictive maintenance, Recall is prioritized to minimize missed failures.
 - F1 Score
 - Precision
+- ROC-AUC
+- Precision-Recall Curve
 
 **5. Model Interpretability (SHAP):**
 
-SHAP analysis was used to explain predictions.
+SHAP analysis was used to explain contribution of features for failure predictions.
 
 Example insights:
  -  High vibration volatility increases failure probability
