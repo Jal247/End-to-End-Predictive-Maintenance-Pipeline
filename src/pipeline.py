@@ -13,7 +13,10 @@ from sklearn.metrics import ( classification_report, accuracy_score, precision_s
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
-from sklearn.calibration import CalibratedClassifierCV
+from sklearn.model_selection import TimeSeriesSplit
+
+tscv = TimeSeriesSplit(n_splits=5) # Time series split with 5 folds
+
 
 # ================================
 # Random Forest Training
@@ -85,14 +88,14 @@ def evaluate_models(models: dict, X_test, y_test):
         comparison_data.append({
             "Model": name,
             "Accuracy": accuracy_score(y_test, y_pred),
-            "Precision (Yes)": precision_score(y_test, y_pred),
-            "Recall (Yes)": recall_score(y_test, y_pred),
-            "F1-Score (Yes)": f1_score(y_test, y_pred)
+            "Precision (1)": precision_score(y_test, y_pred),
+            "Recall (1)": recall_score(y_test, y_pred),
+            "F1-Score (1)": f1_score(y_test, y_pred)
         })
         print(f"\n{name} Classification Report:\n")
         print(classification_report(y_test, y_pred))
 
-    comparison_df = pd.DataFrame(comparison_data).sort_values(by="F1-Score (Yes)", ascending=False)
+    comparison_df = pd.DataFrame(comparison_data).sort_values(by="F1-Score (1)", ascending=False)
     print("\nModel Comparison:\n", comparison_df)
     return y_preds, comparison_df
 
