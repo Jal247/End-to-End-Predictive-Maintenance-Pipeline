@@ -67,6 +67,20 @@ Telemetry Data + Work Orders + Asset Metadata
                 ▼
        Machine Learning Models
   (Random Forest, XGBoost, LightGBM)
+           Pipeline
+              SMOTE
+               ↓
+              Model(Random Forest, XGBoost, LightGBM)
+                ↓
+           RandomizedSearchCV
+                ↓
+           Best Model
+                ↓
+           Probability Calibration
+                ↓
+           Threshold Optimization
+                ↓
+           Evaluation (Precision / Recall / F1)
                 │
                 ▼
          Model Evaluation

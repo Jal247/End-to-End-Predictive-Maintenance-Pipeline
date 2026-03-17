@@ -8,11 +8,16 @@ import seaborn as sns
 import shap
 
 from sklearn.model_selection import RandomizedSearchCV, TimeSeriesSplit
-from sklearn.metrics import classification_report, accuracy_score, precision_score, recall_score, f1_score, roc_curve, auc, precision_recall_curve, average_precision_score
+from sklearn.metrics import ( classification_report, accuracy_score, precision_score, recall_score, f1_score,
+                             roc_curve, auc, precision_recall_curve, average_precision_score )
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
 from lightgbm import LGBMClassifier
+from sklearn.calibration import CalibratedClassifierCV
 
+# ================================
+# Random Forest Training
+# ================================
 def train_random_forest(X_train, y_train, tscv):
     rf = RandomForestClassifier(class_weight='balanced', random_state=42)
     rf_params = {
@@ -26,6 +31,10 @@ def train_random_forest(X_train, y_train, tscv):
     rf_search.fit(X_train, y_train)
     print(f"Best RF Params: {rf_search.best_params_}")
     return rf_search
+
+# ================================
+# XGBoost Training
+# ================================
 
 def train_xgboost(X_train, y_train, tscv):
     pos_weight = (y_train == 0).sum() / (y_train == 1).sum()
@@ -43,6 +52,10 @@ def train_xgboost(X_train, y_train, tscv):
     print(f"Best XGB Params: {xgb_search.best_params_}")
     return xgb_search
 
+# ================================
+# LightGBM Training
+# ================================
+
 def train_lightgbm(X_train, y_train, tscv):
     lgbm = LGBMClassifier(is_unbalance=True, random_state=42)
     lgbm_params = {
@@ -57,6 +70,10 @@ def train_lightgbm(X_train, y_train, tscv):
     lgbm_search.fit(X_train, y_train)
     print(f"Best LGBM Params: {lgbm_search.best_params_}")
     return lgbm_search
+
+# ================================
+# Model Evaluation
+# ================================
 
 def evaluate_models(models: dict, X_test, y_test):
     """Compare multiple models and print metrics."""
@@ -78,6 +95,10 @@ def evaluate_models(models: dict, X_test, y_test):
     comparison_df = pd.DataFrame(comparison_data).sort_values(by="F1-Score (Yes)", ascending=False)
     print("\nModel Comparison:\n", comparison_df)
     return y_preds, comparison_df
+
+# ================================
+# ROC + PR Curves
+# ================================
 
 def plot_roc_pr(models: dict, X_test, y_test, image_dir='images'):
     os.makedirs(image_dir, exist_ok=True)
@@ -112,6 +133,10 @@ def plot_roc_pr(models: dict, X_test, y_test, image_dir='images'):
     plt.grid(True)
     plt.savefig(f'{image_dir}/Precision_Recall_Curve_Comparison.png', dpi=300, bbox_inches='tight')
     plt.show()
+
+# ================================
+# SHAP Analysis
+# ================================
 
 def shap_analysis(model, X_test, model_features, image_dir='images', sample_size=500):
     os.makedirs(image_dir, exist_ok=True)
