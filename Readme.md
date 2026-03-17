@@ -178,7 +178,7 @@ fleet-asset-intelligence/
 │
 ├── notebooks/
 │   ├── 01_data_generation.ipynb
-│   ├── 02_merging_eda_featureeng.ipynb
+│   ├── 02_Merging_EDA_FeatureEng.ipynb
 │   └── 03_split_model_evaluation_SHAP.ipynb
 │
 ├── model/
